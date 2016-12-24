@@ -7,5 +7,6 @@ GPIO.setmode(GPIO.BCM)
 with open('config.json') as data_file:    
     data = json.load(data_file)
     for relay in data:
-    	GPIO.setup(relay['id'], GPIO.OUT)
-    	GPIO.output(relay['id'], relay['on'])
+    	print "Relay " + str(relay['id'] + 6) + " status: " + str(relay['on'])
+    	GPIO.setup(relay['id'] + 6, GPIO.OUT)
+    	GPIO.output(relay['id'] + 6, relay['on'])
