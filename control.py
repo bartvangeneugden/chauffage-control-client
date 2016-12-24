@@ -9,4 +9,4 @@ with open('config.json') as data_file:
     for relay in data:
     	print "Relay " + str(relay['id'] + 6) + " status: " + str(relay['on'])
     	GPIO.setup(relay['id'] + 6, GPIO.OUT)
-    	GPIO.output(relay['id'] + 6, relay['on'])
+    	GPIO.output(relay['id'] + 6, !relay['on'])
